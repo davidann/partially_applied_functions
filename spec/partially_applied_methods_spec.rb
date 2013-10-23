@@ -12,6 +12,11 @@ module Test
 end
 
 describe  Test::A do
+  it "returns a method, with an arity of 1, if called with 1 of 2 arguments" do
+    p_method = described_class.f(1)
+    p_method.arity.should == 1
+  end
+  
   it "returns a method if called with 1 of 2 arguments" do
     p_method = described_class.f(1)
     p_method.should be_kind_of(Proc)
